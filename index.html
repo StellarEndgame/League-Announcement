@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>TC195CL Official League</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+min-height:100vh;
+
+background:
+radial-gradient(circle at 20% 10%,#1e3a8a,#020617 45%),
+linear-gradient(135deg,#020617,#0f172a);
+
+font-family:"Segoe UI",Arial,sans-serif;
+color:white;
+
+}
+
+
+/* Floating chess pieces */
+
+.piece{
+
+position:fixed;
+font-size:80px;
+opacity:.06;
+animation:float 12s infinite ease-in-out;
+pointer-events:none;
+
+}
+
+
+@keyframes float{
+
+50%{
+transform:
+translateY(-70px)
+rotate(180deg);
+}
+
+}
+
+
+
+/* Main container */
+
+.tc195cl{
+
+max-width:950px;
+
+margin:45px auto;
+
+padding:40px;
+
+position:relative;
+
+background:
+linear-gradient(
+145deg,
+rgba(15,23,42,.95),
+rgba(30,41,59,.9)
+);
+
+border-radius:35px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 60px rgba(37,99,235,.35);
+
+transition:.5s;
+
+overflow:hidden;
+
+}
+
+
+
+.tc195cl:before{
+
+content:"";
+
+position:absolute;
+
+inset:-4px;
+
+background:
+linear-gradient(
+45deg,
+#0f172a,
+#2563eb,
+#06b6d4,
+#8b5cf6,
+#facc15,
+#0f172a
+);
+
+background-size:400%;
+
+animation:borderMove 12s linear infinite;
+
+z-index:-1;
+
+border-radius:40px;
+
+}
+
+
+@keyframes borderMove{
+
+50%{
+background-position:100%;
+}
+
+}
+
+
+
+/* Badge */
+
+.badge{
+
+width:max-content;
+
+margin:auto;
+
+padding:10px 25px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+90deg,
+#facc15,
+#eab308
+);
+
+color:#111827;
+
+font-weight:bold;
+
+box-shadow:
+0 0 25px rgba(250,204,21,.6);
+
+}
+
+
+
+/* Heading */
+
+
+.title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-top:25px;
+
+background:
+linear-gradient(
+90deg,
+#38bdf8,
+#818cf8,
+#facc15
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+filter:
+drop-shadow(0 0 15px rgba(56,189,248,.5));
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+
+font-size:20px;
+
+color:#cbd5e1;
+
+}
+
+
+
+/* Stats */
+
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin:35px 0;
+
+}
+
+
+
+.stat{
+
+width:160px;
+
+padding:20px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,.07);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.4s;
+
+}
+
+
+
+.stat:hover{
+
+transform:
+translateY(-10px);
+
+box-shadow:
+0 0 30px #38bdf8;
+
+}
+
+
+
+.stat h2{
+
+font-size:38px;
+
+margin:0;
+
+color:#fde68a;
+
+}
+
+
+
+/* Boxes */
+
+
+.box{
+
+margin:25px 0;
+
+padding:25px;
+
+background:
+
+linear-gradient(
+145deg,
+#111827,
+#1e293b
+);
+
+border-radius:22px;
+
+border:1px solid #334155;
+
+transition:.4s;
+
+}
+
+
+
+.box:hover{
+
+transform:
+translateY(-8px);
+
+border-color:#38bdf8;
+
+box-shadow:
+0 0 30px rgba(14,165,233,.35);
+
+}
+
+
+
+h2{
+
+color:#7dd3fc;
+
+text-shadow:
+0 0 10px rgba(56,189,248,.5);
+
+}
+
+
+
+li{
+
+margin:12px;
+
+}
+
+
+
+/* Highlight */
+
+
+.highlight{
+
+padding:18px;
+
+border-radius:18px;
+
+text-align:center;
+
+font-weight:bold;
+
+background:
+
+linear-gradient(
+90deg,
+#1d4ed8,
+#7c3aed
+);
+
+box-shadow:
+0 0 25px rgba(99,102,241,.6);
+
+}
+
+
+
+/* Trophy */
+
+
+.trophy{
+
+margin-top:30px;
+
+padding:30px;
+
+text-align:center;
+
+border-radius:25px;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(250,204,21,.15),
+rgba(139,92,246,.2)
+);
+
+box-shadow:
+0 0 40px rgba(250,204,21,.3);
+
+}
+
+
+
+.trophy span{
+
+font-size:75px;
+
+}
+
+
+
+/* Button */
+
+
+.join{
+
+width:270px;
+
+margin:35px auto;
+
+padding:18px;
+
+text-align:center;
+
+border-radius:40px;
+
+font-size:20px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+45deg,
+#2563eb,
+#7c3aed,
+#db2777
+);
+
+background-size:300%;
+
+animation:buttonGlow 6s infinite;
+
+box-shadow:
+0 0 30px #2563eb;
+
+transition:.4s;
+
+}
+
+
+
+.join:hover{
+
+transform:
+scale(1.12);
+
+box-shadow:
+0 0 50px #38bdf8;
+
+}
+
+
+
+@keyframes buttonGlow{
+
+50%{
+
+background-position:100%;
+
+}
+
+}
+
+
+
+/* Footer */
+
+
+.footer{
+
+text-align:center;
+
+color:#94a3b8;
+
+margin-top:30px;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.tc195cl{
+
+margin:15px;
+
+padding:25px;
+
+}
+
+.title{
+
+font-size:28px;
+
+}
+
+.stat{
+
+width:120px;
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="piece" style="top:15%;left:5%">♟</div>
+<div class="piece" style="top:65%;right:5%">♜</div>
+<div class="piece" style="bottom:10%;left:45%">♞</div>
+
+
+
+<div class="tc195cl">
+
+
+<div class="badge">
+🏆 SEASON 1 OFFICIAL LEAGUE
+</div>
+
+
+<h1 class="title">
+🌍 The Club Of 195 Countries League (TC195CL)
+</h1>
+
+
+<p class="subtitle">
+♟️ Official League of The Club Of 195 Countries
+<br>
+500+ Members • 11 Titled Players • 100% Activity
+</p>
+
+
+
+<div class="stats">
+
+<div class="stat">
+<h2>500+</h2>
+<p>Members</p>
+</div>
+
+<div class="stat">
+<h2>11</h2>
+<p>Titled Players</p>
+</div>
+
+<div class="stat">
+<h2>195</h2>
+<p>Countries Goal</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Activity</p>
+</div>
+
+</div>
+
+
+
+
+<div class="box">
+
+<h2>🏛 About The League</h2>
+
+<p>
+TC195CL brings chess clubs together through friendly,
+competitive Multi-Club Arenas with monthly standings and champions.
+</p>
+
+</div>
+
+
+
+<div class="box">
+
+<h2>🏆 League Format</h2>
+
+<ul>
+
+<li>⚡ 3+2 Blitz (48h MCA)</li>
+
+<li>📅 Every Saturday - 13:00 UTC (6:30 PM IST)</li>
+
+<li>🏆 Monthly seasons</li>
+
+<li>📊 Results count toward standings</li>
+
+<li>🥇 Top clubs and players receive trophies</li>
+
+</ul>
+
+</div>
+
+
+
+
+<div class="box">
+
+<h2>📝 Registration</h2>
+
+<ol>
+
+<li>Message @Stellar_Endgame</li>
+
+<li>Invite @The-Club-Of-195-Countries</li>
+
+<li>Promote it to Coordinator</li>
+
+</ol>
+
+
+<div class="highlight">
+
+✅ Automatic League Tournament Invitations
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="box">
+
+<h2>🤝 Fair Play</h2>
+
+<p>
+
+Respect opponents, follow Chess.com Fair Play Rules,
+and maintain good sportsmanship.
+
+</p>
+
+</div>
+
+
+
+
+<div class="trophy">
+
+<span>🏆</span>
+
+<h2>
+Become The Next TC195CL Champion
+</h2>
+
+<p>
+Compete • Represent • Conquer
+</p>
+
+</div>
+
+
+
+
+<div class="join" onclick="register()">
+
+🚀 REGISTER YOUR CLUB
+
+</div>
+
+
+
+
+<h2 style="text-align:center">
+
+🌟 May The Best Club Win! ♟️🏆
+
+</h2>
+
+
+<p class="footer">
+
+The Club Of 195 Countries Team
+<br>
+@Stellar_Endgame
+
+</p>
+
+
+</div>
+
+
+
+<script>
+
+
+let card=document.querySelector(".tc195cl");
+
+
+document.addEventListener("mousemove",function(e){
+
+
+let x=(window.innerWidth/2-e.clientX)/80;
+
+let y=(window.innerHeight/2-e.clientY)/80;
+
+
+card.style.transform=
+
+`perspective(1200px)
+rotateY(${-x}deg)
+rotateX(${-y}deg)
+scale(.99)`;
+
+
+});
+
+
+
+document.addEventListener("mouseleave",function(){
+
+card.style.transform=
+"rotateY(0deg) rotateX(0deg) scale(1)";
+
+});
+
+
+
+function register(){
+
+alert(
+"♟️ TC195CL Registration\n\nContact @Stellar_Endgame to register your club!"
+);
+
+}
+
+
+</script>
+
+
+</body>
+</html>
