@@ -827,14 +827,13 @@ and maintain good sportsmanship.
 
 
 
+<!-- FINAL CHAMPION SECTION -->
 
 <div class="trophy">
 
-    <span>🏆</span>
+    <div class="trophy-icon">🏆</div>
 
-    <h2>
-        Become The Next TC195CL Champion
-    </h2>
+    <h2>Become The Next TC195CL Champion</h2>
 
     <p>
         Compete • Represent • Conquer
@@ -843,58 +842,81 @@ and maintain good sportsmanship.
 </div>
 
 
-<div class="join" onclick="register()">
+<!-- REGISTER BUTTON -->
 
+<a
+    class="join"
+    href="https://www.chess.com/member/Stellar_Endgame"
+    target="_blank"
+    rel="noopener noreferrer"
+>
     🚀 REGISTER YOUR CLUB
+</a>
 
-</div>
 
+<!-- FINAL MESSAGE -->
 
 <div class="final-message">
 
-    <h2>
-        🌟 May The Best Club Win! ♟️
-    </h2>
+    <div class="final-line"></div>
+
+    <h2>🌟 May The Best Club Win! ♟️</h2>
 
     <p>
         See you on the league board.
     </p>
 
+    <div class="final-line"></div>
+
 </div>
 
 
+<!-- OFFICIAL TEAM -->
+
+<div class="official-team">
+
+    <div class="official-title">
+        🏛️ TC195CL OFFICIAL TEAM
+    </div>
+
+    <p>
+        The Club Of 195 Countries Team
+    </p>
+
+    <div class="team-links">
+
+        <a
+            href="https://www.chess.com/member/Stellar_Endgame"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ♟️ @Stellar_Endgame
+        </a>
+
+        <a
+            href="https://www.chess.com/member/iamplayerofchess"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ♟️ @iamplayerofchess
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
 <p class="footer">
 
-    <strong>
-        The Club Of 195 Countries Team
-    </strong>
+    🌍 The Club Of 195 Countries League
 
     <br>
 
-    Official TC195CL League
-
-    <br><br>
-
-    <a
-        href="https://www.chess.com/member/Stellar_Endgame"
-        target="_blank"
-        rel="noopener"
-    >
-        @Stellar_Endgame
-    </a>
-
-    &nbsp; • &nbsp;
-
-    <a
-        href="https://www.chess.com/member/iamplayerofchess"
-        target="_blank"
-        rel="noopener"
-    >
-        @iamplayerofchess
-    </a>
+    <span>TC195CL • Official League</span>
 
 </p>
-
 
 
 </div>
@@ -902,163 +924,421 @@ and maintain good sportsmanship.
 
 <script>
 
+/* =========================
+   SMOOTH 3D MOUSE EFFECT
+   ========================= */
+
 const card = document.querySelector(".tc195cl");
 
-let mouseInside = false;
+let isInside = false;
+
+document.addEventListener("mouseenter", function () {
+    isInside = true;
+});
 
 
-/* Smooth reverse 3D tilt */
+document.addEventListener("mousemove", function (e) {
 
-document.addEventListener("mousemove", function(e){
+    if (!isInside) return;
 
-    if(!mouseInside) return;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
-    const x =
-        (window.innerWidth / 2 - e.clientX) / 100;
-
-    const y =
-        (window.innerHeight / 2 - e.clientY) / 100;
+    const rotateY = (e.clientX - centerX) / 120;
+    const rotateX = (centerY - e.clientY) / 120;
 
     card.style.transform =
-        `perspective(1400px)
-         rotateY(${-x}deg)
-         rotateX(${-y}deg)
-         scale(.995)`;
+        "perspective(1400px) " +
+        "rotateX(" + rotateX + "deg) " +
+        "rotateY(" + rotateY + "deg) " +
+        "scale(0.995)";
 
 });
 
 
-/* Detect mouse entering page */
+document.addEventListener("mouseleave", function () {
 
-document.addEventListener("mouseenter", function(){
-
-    mouseInside = true;
-
-});
-
-
-/* Smoothly return card */
-
-document.addEventListener("mouseleave", function(){
-
-    mouseInside = false;
+    isInside = false;
 
     card.style.transform =
-        "perspective(1400px) rotateY(0deg) rotateX(0deg) scale(1)";
+        "perspective(1400px) " +
+        "rotateX(0deg) " +
+        "rotateY(0deg) " +
+        "scale(1)";
 
 });
 
 
-/* Register button */
+/* =========================
+   REGISTER BUTTON
+   ========================= */
 
-function register(){
+const registerButton =
+    document.querySelector(".join");
+
+registerButton.addEventListener("click", function () {
 
     window.open(
         "https://www.chess.com/member/Stellar_Endgame",
         "_blank",
-        "noopener"
+        "noopener,noreferrer"
     );
 
-}
+});
 
 </script>
 
 
 </body>
 </html>
+```
+
+And add this CSS **before your existing `</style>`**:
+
+```css
+/* =========================
+   FINAL SECTION
+   ========================= */
+
+.trophy{
+    position:relative;
+    margin:35px 0 25px;
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:26px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(250,204,21,.18),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #1e293b,
+            #0f172a
+        );
+
+    border:1px solid rgba(250,204,21,.35);
+
+    box-shadow:
+        0 0 35px rgba(250,204,21,.12),
+        inset 0 0 30px rgba(250,204,21,.04);
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.trophy:hover{
+    transform:translateY(-5px);
+
+    border-color:#facc15;
+
+    box-shadow:
+        0 0 45px rgba(250,204,21,.3),
+        inset 0 0 35px rgba(250,204,21,.08);
+}
+
+.trophy-icon{
+    font-size:70px;
+
+    filter:
+        drop-shadow(0 0 18px rgba(250,204,21,.7));
+
+    animation:trophyFloat 3s ease-in-out infinite;
+}
+
+@keyframes trophyFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+.trophy h2{
+    margin:12px 0 8px;
+
+    color:#fde68a;
+
+    text-shadow:
+        0 0 12px rgba(250,204,21,.5);
+}
+
+.trophy p{
+    margin:0;
+
+    color:#cbd5e1;
+}
 
 
+/* REGISTER BUTTON */
+
+.join{
+    display:block;
+
+    width:290px;
+
+    margin:30px auto;
+
+    padding:17px 25px;
+
+    text-align:center;
+
+    border-radius:50px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed,
+            #2563eb
+        );
+
+    background-size:300% 100%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 25px rgba(37,99,235,.45);
+
+    animation:buttonGradient 6s ease infinite;
+
+    transition:.3s;
+}
+
+@keyframes buttonGradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+.join:hover{
+
+    color:white;
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 0 45px rgba(56,189,248,.65);
+
+}
 
 
+/* FINAL MESSAGE */
 
-<h2 style="text-align:center">
+.final-message{
+    text-align:center;
 
-🌟 May The Best Club Win! ♟️🏆
+    margin:35px 0 25px;
+}
 
-</h2>
+.final-message h2{
+    color:#e0f2fe;
 
+    margin:18px 0 8px;
 
+    font-size:24px;
+}
 
+.final-message p{
+    color:#94a3b8;
 
+    margin:0;
+}
 
-<p class="footer">
+.final-line{
+    width:70%;
 
-The Club Of 195 Countries Team
+    max-width:500px;
 
-<br>
+    height:1px;
 
-<a href="https://www.chess.com/member/Stellar_Endgame" target="_blank">
+    margin:auto;
 
-@Stellar_Endgame
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #38bdf8,
+            #8b5cf6,
+            #facc15,
+            transparent
+        );
 
-</a>
-
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-<script>
-
-
-let card=document.querySelector(".tc195cl");
-
-
-
-document.addEventListener("mousemove",function(e){
-
-
-let x=(window.innerWidth/2-e.clientX)/80;
-
-let y=(window.innerHeight/2-e.clientY)/80;
+    box-shadow:
+        0 0 10px rgba(56,189,248,.4);
+}
 
 
+/* OFFICIAL TEAM */
 
-card.style.transform=
+.official-team{
 
-`perspective(1200px)
-rotateY(${-x}deg)
-rotateX(${-y}deg)
-scale(.99)`;
+    margin:25px 0 10px;
+
+    padding:24px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(148,163,184,.15);
+
+    transition:.4s;
+}
+
+.official-team:hover{
+
+    border-color:
+        rgba(56,189,248,.45);
+
+    box-shadow:
+        0 0 25px rgba(56,189,248,.12);
+}
+
+.official-title{
+
+    color:#7dd3fc;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+}
+
+.official-team p{
+
+    margin:8px 0 18px;
+
+    color:#94a3b8;
+}
+
+.team-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.team-links a{
+
+    display:inline-block;
+
+    padding:10px 16px;
+
+    border-radius:30px;
+
+    background:
+        rgba(56,189,248,.08);
+
+    border:
+        1px solid rgba(56,189,248,.2);
+
+    color:#38bdf8;
+
+    transition:.3s;
+}
+
+.team-links a:hover{
+
+    color:#facc15;
+
+    border-color:#facc15;
+
+    background:
+        rgba(250,204,21,.08);
+
+    box-shadow:
+        0 0 18px rgba(250,204,21,.25);
+
+    transform:translateY(-3px);
+}
 
 
-});
+/* FOOTER */
+
+.footer{
+
+    margin-top:25px;
+
+    padding-top:20px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    border-top:
+        1px solid rgba(148,163,184,.12);
+}
+
+.footer span{
+
+    color:#475569;
+
+}
 
 
+/* MOBILE */
 
+@media(max-width:600px){
 
+    .join{
+        width:100%;
+        max-width:290px;
+    }
 
-document.addEventListener("mouseleave",function(){
+    .team-links{
+        flex-direction:column;
+    }
 
-
-card.style.transform=
-
-"perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1)";
-
-
-});
-
-
-
-
-
-function register(){
-
-
-window.open(
-
-"https://www.chess.com/member/Stellar_Endgame",
-
-"_blank"
-
-);
-
+    .team-links a{
+        width:100%;
+    }
 
 }
 
