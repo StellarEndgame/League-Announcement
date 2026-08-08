@@ -658,7 +658,7 @@ box-shadow:
 
 
 <h1 class="title">
-🌍 The Club Of 195 Countries League (TC195CL)
+The Club Of 195 Countries League (TC195CL)
 </h1>
 
 
@@ -731,7 +731,7 @@ competitive Multi-Club Arenas with monthly standings and champions.
 
 <ul>
 
-<li>⚡ 3+2 Blitz (48h MCA)</li>
+<li>⚡ 3+2 Blitz (48hrs MCA)</li>
 
 <li>📅 Every Saturday - 13:00 UTC (6:30 PM IST)</li>
 
@@ -825,185 +825,15 @@ and maintain good sportsmanship.
 </div>
 
 
-
-
-<!-- FINAL CHAMPION SECTION -->
-
-<div class="trophy">
-
-    <div class="trophy-icon">🏆</div>
-
-    <h2>Become The Next TC195CL Champion</h2>
-
-    <p>
-        Compete • Represent • Conquer
-    </p>
-
-</div>
-
-
-<!-- REGISTER BUTTON -->
-
-<a
-    class="join"
-    href="https://www.chess.com/member/Stellar_Endgame"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    🚀 REGISTER YOUR CLUB
-</a>
-
-
-<!-- FINAL MESSAGE -->
-
-<div class="final-message">
-
-    <div class="final-line"></div>
-
-    <h2>🌟 May The Best Club Win! ♟️</h2>
-
-    <p>
-        See you on the league board.
-    </p>
-
-    <div class="final-line"></div>
-
-</div>
-
-
-<!-- OFFICIAL TEAM -->
-
-<div class="official-team">
-
-    <div class="official-title">
-        🏛️ TC195CL OFFICIAL TEAM
-    </div>
-
-    <p>
-        The Club Of 195 Countries Team
-    </p>
-
-    <div class="team-links">
-
-        <a
-            href="https://www.chess.com/member/Stellar_Endgame"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            ♟️ @Stellar_Endgame
-        </a>
-
-        <a
-            href="https://www.chess.com/member/iamplayerofchess"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            ♟️ @iamplayerofchess
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<p class="footer">
-
-    🌍 The Club Of 195 Countries League
-
-    <br>
-
-    <span>TC195CL • Official League</span>
-
-</p>
-
-
-</div>
-
-
-<script>
-
-/* =========================
-   SMOOTH 3D MOUSE EFFECT
-   ========================= */
-
-const card = document.querySelector(".tc195cl");
-
-let isInside = false;
-
-document.addEventListener("mouseenter", function () {
-    isInside = true;
-});
-
-
-document.addEventListener("mousemove", function (e) {
-
-    if (!isInside) return;
-
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-
-    const rotateY = (e.clientX - centerX) / 120;
-    const rotateX = (centerY - e.clientY) / 120;
-
-    card.style.transform =
-        "perspective(1400px) " +
-        "rotateX(" + rotateX + "deg) " +
-        "rotateY(" + rotateY + "deg) " +
-        "scale(0.995)";
-
-});
-
-
-document.addEventListener("mouseleave", function () {
-
-    isInside = false;
-
-    card.style.transform =
-        "perspective(1400px) " +
-        "rotateX(0deg) " +
-        "rotateY(0deg) " +
-        "scale(1)";
-
-});
-
-
-/* =========================
-   REGISTER BUTTON
-   ========================= */
-
-const registerButton =
-    document.querySelector(".join");
-
-registerButton.addEventListener("click", function () {
-
-    window.open(
-        "https://www.chess.com/member/Stellar_Endgame",
-        "_blank",
-        "noopener,noreferrer"
-    );
-
-});
-
-</script>
-
-
-</body>
-</html>
-```
-
-And add this CSS **before your existing `</style>`**:
-
-```css
-/* =========================
-   FINAL SECTION
-   ========================= */
+/* =====================================
+   CHAMPION CARD
+   ===================================== */
 
 .trophy{
     position:relative;
-    margin:35px 0 25px;
-    padding:35px 25px;
+
+    margin:35px 0 28px;
+    padding:32px 24px;
 
     text-align:center;
 
@@ -1021,13 +851,10 @@ And add this CSS **before your existing `</style>`**:
             #0f172a
         );
 
-    border:1px solid rgba(250,204,21,.35);
+    border:1px solid rgba(250,204,21,.3);
 
     box-shadow:
-        0 0 35px rgba(250,204,21,.12),
-        inset 0 0 30px rgba(250,204,21,.04);
-
-    overflow:hidden;
+        0 0 35px rgba(250,204,21,.12);
 
     transition:.4s;
 }
@@ -1038,17 +865,20 @@ And add this CSS **before your existing `</style>`**:
     border-color:#facc15;
 
     box-shadow:
-        0 0 45px rgba(250,204,21,.3),
-        inset 0 0 35px rgba(250,204,21,.08);
+        0 0 45px rgba(250,204,21,.28);
 }
 
 .trophy-icon{
-    font-size:70px;
+    font-size:68px;
 
     filter:
-        drop-shadow(0 0 18px rgba(250,204,21,.7));
+        drop-shadow(
+            0 0 18px
+            rgba(250,204,21,.7)
+        );
 
-    animation:trophyFloat 3s ease-in-out infinite;
+    animation:
+        trophyFloat 3s ease-in-out infinite;
 }
 
 @keyframes trophyFloat{
@@ -1069,7 +899,8 @@ And add this CSS **before your existing `</style>`**:
     color:#fde68a;
 
     text-shadow:
-        0 0 12px rgba(250,204,21,.5);
+        0 0 12px
+        rgba(250,204,21,.45);
 }
 
 .trophy p{
@@ -1079,24 +910,43 @@ And add this CSS **before your existing `</style>`**:
 }
 
 
-/* REGISTER BUTTON */
+/* =====================================
+   REGISTER DROPDOWN
+   ===================================== */
 
-.join{
-    display:block;
-
-    width:290px;
+.register-dropdown{
+    width:100%;
+    max-width:620px;
 
     margin:30px auto;
 
-    padding:17px 25px;
+    position:relative;
+}
 
-    text-align:center;
+
+/* Main button */
+
+.register-dropdown summary{
+
+    list-style:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:18px 24px;
 
     border-radius:50px;
 
-    color:white;
+    cursor:pointer;
 
-    text-decoration:none;
+    user-select:none;
+
+    color:white;
 
     font-size:18px;
 
@@ -1115,69 +965,317 @@ And add this CSS **before your existing `</style>`**:
 
     background-size:300% 100%;
 
-    border:1px solid rgba(255,255,255,.2);
+    border:
+        1px solid
+        rgba(255,255,255,.2);
 
     box-shadow:
-        0 0 25px rgba(37,99,235,.45);
+        0 0 25px
+        rgba(37,99,235,.4);
 
-    animation:buttonGradient 6s ease infinite;
-
-    transition:.3s;
+    transition:.35s;
 }
 
-@keyframes buttonGradient{
 
-    0%{
-        background-position:0% 50%;
-    }
+/* Remove default arrow */
 
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-
+.register-dropdown summary::-webkit-details-marker{
+    display:none;
 }
 
-.join:hover{
 
-    color:white;
+/* Hover */
+
+.register-dropdown summary:hover{
 
     transform:
-        translateY(-5px)
-        scale(1.04);
+        translateY(-3px);
 
     box-shadow:
-        0 0 45px rgba(56,189,248,.65);
+        0 0 40px
+        rgba(56,189,248,.5);
+}
+
+
+/* Arrow */
+
+.arrow{
+
+    font-size:25px;
+
+    transition:.35s;
+}
+
+
+/* Rotate arrow when open */
+
+.register-dropdown[open] .arrow{
+
+    transform:
+        rotate(180deg);
 
 }
 
 
-/* FINAL MESSAGE */
+/* Dropdown panel */
 
-.final-message{
+.register-content{
+
+    margin-top:12px;
+
+    padding:24px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111827,
+            #1e293b
+        );
+
+    border:
+        1px solid
+        rgba(56,189,248,.25);
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.35),
+        0 0 25px
+        rgba(56,189,248,.1);
+
+    animation:
+        dropdownOpen .3s ease;
+}
+
+
+@keyframes dropdownOpen{
+
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+.register-title{
+
+    margin:0;
+
     text-align:center;
 
-    margin:35px 0 25px;
+    color:#e0f2fe;
+
+    font-size:20px;
+
+    font-weight:700;
 }
 
+
+.register-subtitle{
+
+    margin:7px 0 20px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+}
+
+
+/* Coordinator cards */
+
+.coordinators{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+.coordinator{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(148,163,184,.15);
+
+    transition:.3s;
+
+}
+
+
+.coordinator:hover{
+
+    transform:
+        translateX(6px);
+
+    border-color:
+        #38bdf8;
+
+    background:
+        rgba(56,189,248,.08);
+
+    box-shadow:
+        0 0 20px
+        rgba(56,189,248,.15);
+
+}
+
+
+/* Chess icon */
+
+.coordinator-icon{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #7c3aed
+        );
+
+    font-size:21px;
+
+    box-shadow:
+        0 0 15px
+        rgba(37,99,235,.35);
+
+}
+
+
+/* Username */
+
+.coordinator-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+
+}
+
+
+.coordinator-info strong{
+
+    color:#38bdf8;
+
+    font-size:16px;
+
+}
+
+
+.coordinator-info small{
+
+    color:#64748b;
+
+    font-size:12px;
+
+}
+
+
+.coordinator:hover
+.coordinator-info strong{
+
+    color:#facc15;
+
+    text-shadow:
+        0 0 10px
+        rgba(250,204,21,.5);
+
+}
+
+
+/* Bottom note */
+
+.register-note{
+
+    margin-top:18px;
+
+    padding:12px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    background:
+        rgba(255,255,255,.035);
+
+}
+
+
+/* =====================================
+   FINAL MESSAGE
+   ===================================== */
+
+.final-message{
+
+    text-align:center;
+
+    margin:38px 0 28px;
+
+}
+
+
 .final-message h2{
-    color:#e0f2fe;
 
     margin:18px 0 8px;
 
+    color:#e0f2fe;
+
     font-size:24px;
+
 }
+
 
 .final-message p{
-    color:#94a3b8;
 
     margin:0;
+
+    color:#94a3b8;
+
 }
 
+
 .final-line{
+
     width:70%;
 
     max-width:500px;
@@ -1197,110 +1295,17 @@ And add this CSS **before your existing `</style>`**:
         );
 
     box-shadow:
-        0 0 10px rgba(56,189,248,.4);
-}
-
-
-/* OFFICIAL TEAM */
-
-.official-team{
-
-    margin:25px 0 10px;
-
-    padding:24px;
-
-    text-align:center;
-
-    border-radius:22px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    border:
-        1px solid rgba(148,163,184,.15);
-
-    transition:.4s;
-}
-
-.official-team:hover{
-
-    border-color:
-        rgba(56,189,248,.45);
-
-    box-shadow:
-        0 0 25px rgba(56,189,248,.12);
-}
-
-.official-title{
-
-    color:#7dd3fc;
-
-    font-size:16px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
+        0 0 10px
+        rgba(56,189,248,.35);
 
 }
 
-.official-team p{
 
-    margin:8px 0 18px;
+/* =====================================
+   FOOTER
+   ===================================== */
 
-    color:#94a3b8;
-}
-
-.team-links{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.team-links a{
-
-    display:inline-block;
-
-    padding:10px 16px;
-
-    border-radius:30px;
-
-    background:
-        rgba(56,189,248,.08);
-
-    border:
-        1px solid rgba(56,189,248,.2);
-
-    color:#38bdf8;
-
-    transition:.3s;
-}
-
-.team-links a:hover{
-
-    color:#facc15;
-
-    border-color:#facc15;
-
-    background:
-        rgba(250,204,21,.08);
-
-    box-shadow:
-        0 0 18px rgba(250,204,21,.25);
-
-    transform:translateY(-3px);
-}
-
-
-/* FOOTER */
-
-.footer{
+.official-footer{
 
     margin-top:25px;
 
@@ -1308,41 +1313,78 @@ And add this CSS **before your existing `</style>`**:
 
     text-align:center;
 
-    color:#64748b;
-
-    font-size:14px;
-
     border-top:
-        1px solid rgba(148,163,184,.12);
+        1px solid
+        rgba(148,163,184,.12);
+
 }
 
-.footer span{
+
+.official-footer strong{
+
+    display:block;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+}
+
+
+.official-footer span{
+
+    display:block;
+
+    margin-top:6px;
 
     color:#475569;
 
+    font-size:12px;
+
 }
 
 
-/* MOBILE */
+/* =====================================
+   MOBILE
+   ===================================== */
 
 @media(max-width:600px){
 
-    .join{
+    .register-dropdown{
+
         width:100%;
-        max-width:290px;
+
     }
 
-    .team-links{
-        flex-direction:column;
+    .register-dropdown summary{
+
+        font-size:16px;
+
+        padding:16px 20px;
+
     }
 
-    .team-links a{
-        width:100%;
+    .register-content{
+
+        padding:18px;
+
+    }
+
+    .trophy-icon{
+
+        font-size:58px;
+
+    }
+
+    .final-message h2{
+
+        font-size:20px;
+
     }
 
 }
-
-
 
 </script>
 
