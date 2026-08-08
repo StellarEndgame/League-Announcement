@@ -349,6 +349,291 @@ box-shadow:
 
 }
 
+/* =========================
+   FINAL CTA / TROPHY
+   ========================= */
+
+.trophy{
+    position:relative;
+    margin:35px 0 25px;
+    padding:32px 25px;
+    text-align:center;
+    border-radius:26px;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 50% 0%,
+        rgba(250,204,21,.18),
+        transparent 55%),
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.95),
+            rgba(15,23,42,.95)
+        );
+
+    border:1px solid rgba(250,204,21,.3);
+
+    box-shadow:
+        0 0 35px rgba(250,204,21,.12),
+        inset 0 0 30px rgba(250,204,21,.04);
+
+    transition:.4s;
+}
+
+.trophy:hover{
+    transform:translateY(-5px);
+    border-color:rgba(250,204,21,.7);
+
+    box-shadow:
+        0 0 45px rgba(250,204,21,.25),
+        inset 0 0 35px rgba(250,204,21,.08);
+}
+
+.trophy:before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    left:50%;
+    top:-110px;
+    transform:translateX(-50%);
+
+    background:#facc15;
+    opacity:.08;
+    filter:blur(45px);
+}
+
+.trophy span{
+    position:relative;
+    display:block;
+    font-size:68px;
+
+    filter:
+        drop-shadow(0 0 15px rgba(250,204,21,.7));
+
+    animation:trophyFloat 3s ease-in-out infinite;
+}
+
+@keyframes trophyFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.trophy h2{
+    position:relative;
+    margin:12px 0 8px;
+
+    color:#fde68a;
+
+    text-shadow:
+        0 0 12px rgba(250,204,21,.4);
+}
+
+.trophy p{
+    position:relative;
+    margin:0;
+
+    color:#cbd5e1;
+    font-size:16px;
+}
+
+
+/* =========================
+   FINAL JOIN BUTTON
+   ========================= */
+
+.join{
+    position:relative;
+
+    width:290px;
+    margin:30px auto;
+
+    padding:17px 25px;
+
+    text-align:center;
+
+    border-radius:50px;
+
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.5px;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            110deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed,
+            #2563eb
+        );
+
+    background-size:300% 100%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 25px rgba(37,99,235,.45),
+        inset 0 1px 0 rgba(255,255,255,.2);
+
+    animation:joinGradient 6s ease infinite;
+
+    transition:
+        transform .3s,
+        box-shadow .3s;
+}
+
+@keyframes joinGradient{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.join:before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #818cf8,
+            #a855f7,
+            #38bdf8
+        );
+
+    background-size:300%;
+
+    opacity:0;
+    z-index:-1;
+
+    filter:blur(12px);
+
+    transition:.3s;
+
+    animation:joinGlow 5s linear infinite;
+}
+
+@keyframes joinGlow{
+    50%{
+        background-position:100%;
+    }
+}
+
+.join:hover{
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 0 45px rgba(56,189,248,.6),
+        0 0 80px rgba(124,58,237,.25);
+}
+
+.join:hover:before{
+    opacity:1;
+}
+
+.join:active{
+    transform:scale(.97);
+}
+
+
+/* =========================
+   FINAL MESSAGE
+   ========================= */
+
+.final-message{
+    text-align:center;
+    margin:30px 0 10px;
+}
+
+.final-message h2{
+    margin-bottom:8px;
+
+    font-size:24px;
+
+    color:#e0f2fe;
+}
+
+.final-message p{
+    margin:0;
+
+    color:#94a3b8;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+    margin-top:30px;
+    padding-top:22px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    border-top:
+        1px solid rgba(148,163,184,.12);
+}
+
+.footer strong{
+    color:#94a3b8;
+}
+
+.footer a{
+    color:#38bdf8;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:600px){
+
+    .trophy{
+        padding:28px 18px;
+    }
+
+    .trophy span{
+        font-size:58px;
+    }
+
+    .join{
+        width:100%;
+        max-width:290px;
+    }
+
+    .final-message h2{
+        font-size:20px;
+    }
+
+}
+
 </style>
 
 </head>
@@ -545,19 +830,58 @@ and maintain good sportsmanship.
 
 <div class="trophy">
 
-<span>🏆</span>
+    <span>🏆</span>
+
+    <h2>
+        Become The Next TC195CL Champion
+    </h2>
+
+    <p>
+        Compete • Represent • Conquer
+    </p>
+
+</div>
 
 
-<h2>
+<div class="join" onclick="register()">
 
-Become The Next TC195CL Champion
+    🚀 REGISTER YOUR CLUB
 
-</h2>
+</div>
 
 
-<p>
+<div class="final-message">
 
-Compete • Represent • Conquer
+    <h2>
+        🌟 May The Best Club Win! ♟️
+    </h2>
+
+    <p>
+        See you on the league board.
+    </p>
+
+</div>
+
+
+<p class="footer">
+
+    <strong>
+        The Club Of 195 Countries Team
+    </strong>
+
+    <br>
+
+    Official TC195CL League
+
+    <br><br>
+
+    <a
+        href="https://www.chess.com/member/Stellar_Endgame"
+        target="_blank"
+        rel="noopener"
+    >
+        @Stellar_Endgame
+    </a>
 
 </p>
 
@@ -565,14 +889,72 @@ Compete • Represent • Conquer
 </div>
 
 
+<script>
+
+const card = document.querySelector(".tc195cl");
+
+let mouseInside = false;
 
 
+/* Smooth reverse 3D tilt */
 
-<div class="join" onclick="register()">
+document.addEventListener("mousemove", function(e){
 
-🚀 REGISTER YOUR CLUB
+    if(!mouseInside) return;
 
-</div>
+    const x =
+        (window.innerWidth / 2 - e.clientX) / 100;
+
+    const y =
+        (window.innerHeight / 2 - e.clientY) / 100;
+
+    card.style.transform =
+        `perspective(1400px)
+         rotateY(${-x}deg)
+         rotateX(${-y}deg)
+         scale(.995)`;
+
+});
+
+
+/* Detect mouse entering page */
+
+document.addEventListener("mouseenter", function(){
+
+    mouseInside = true;
+
+});
+
+
+/* Smoothly return card */
+
+document.addEventListener("mouseleave", function(){
+
+    mouseInside = false;
+
+    card.style.transform =
+        "perspective(1400px) rotateY(0deg) rotateX(0deg) scale(1)";
+
+});
+
+
+/* Register button */
+
+function register(){
+
+    window.open(
+        "https://www.chess.com/member/Stellar_Endgame",
+        "_blank",
+        "noopener"
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
 
 
 
