@@ -634,6 +634,1060 @@ box-shadow:
 
 }
 
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>TC195CL Official League</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+min-height:100vh;
+
+background:
+radial-gradient(circle at 20% 10%,#1e3a8a,#020617 45%),
+linear-gradient(135deg,#020617,#0f172a);
+
+font-family:"Segoe UI",Arial,sans-serif;
+color:white;
+}
+
+
+/* Links */
+
+a{
+color:#38bdf8;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+a:hover{
+color:#facc15;
+text-shadow:0 0 15px #facc15;
+}
+
+
+
+/* Floating chess */
+
+.piece{
+
+position:fixed;
+font-size:80px;
+opacity:.06;
+animation:float 12s infinite ease-in-out;
+pointer-events:none;
+
+}
+
+
+@keyframes float{
+
+50%{
+transform:
+translateY(-70px)
+rotate(180deg);
+}
+
+}
+
+
+
+/* Main card */
+
+.tc195cl{
+
+max-width:950px;
+
+margin:45px auto;
+
+padding:40px;
+
+position:relative;
+
+background:
+linear-gradient(
+145deg,
+rgba(15,23,42,.95),
+rgba(30,41,59,.9)
+);
+
+border-radius:35px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 60px rgba(37,99,235,.35);
+
+transition:.5s;
+
+overflow:hidden;
+
+}
+
+
+
+.tc195cl:before{
+
+content:"";
+
+position:absolute;
+
+inset:-4px;
+
+background:
+linear-gradient(
+45deg,
+#0f172a,
+#2563eb,
+#06b6d4,
+#8b5cf6,
+#facc15,
+#0f172a
+);
+
+background-size:400%;
+
+animation:borderMove 12s linear infinite;
+
+z-index:-1;
+
+border-radius:40px;
+
+}
+
+
+@keyframes borderMove{
+
+50%{
+background-position:100%;
+}
+
+}
+
+
+
+/* Badge */
+
+.badge{
+
+width:max-content;
+
+margin:auto;
+
+padding:10px 25px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+90deg,
+#facc15,
+#eab308
+);
+
+color:#111827;
+
+font-weight:bold;
+
+box-shadow:
+0 0 25px rgba(250,204,21,.6);
+
+}
+
+
+
+/* Title */
+
+.title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-top:25px;
+
+background:
+linear-gradient(
+90deg,
+#38bdf8,
+#818cf8,
+#facc15
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+filter:
+drop-shadow(0 0 15px rgba(56,189,248,.5));
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+
+font-size:20px;
+
+color:#cbd5e1;
+
+}
+
+
+
+/* Stats */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin:35px 0;
+
+}
+
+
+.stat{
+
+width:160px;
+
+padding:20px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,.07);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.4s;
+
+}
+
+
+.stat:hover{
+
+transform:
+translateY(-10px);
+
+box-shadow:
+0 0 30px #38bdf8;
+
+}
+
+
+
+.stat h2{
+
+font-size:38px;
+
+margin:0;
+
+color:#fde68a;
+
+}
+
+
+
+/* Sections */
+
+.box{
+
+margin:25px 0;
+
+padding:25px;
+
+background:
+linear-gradient(
+145deg,
+#111827,
+#1e293b
+);
+
+border-radius:22px;
+
+border:1px solid #334155;
+
+transition:.4s;
+
+}
+
+
+.box:hover{
+
+transform:
+translateY(-8px);
+
+border-color:#38bdf8;
+
+box-shadow:
+0 0 30px rgba(14,165,233,.35);
+
+}
+
+
+
+h2{
+
+color:#7dd3fc;
+
+text-shadow:
+0 0 10px rgba(56,189,248,.5);
+
+}
+
+
+li{
+
+margin:12px;
+
+}
+
+
+/* Highlight */
+
+.highlight{
+
+padding:18px;
+
+border-radius:18px;
+
+text-align:center;
+
+font-weight:bold;
+
+background:
+linear-gradient(
+90deg,
+#1d4ed8,
+#7c3aed
+);
+
+box-shadow:
+0 0 25px rgba(99,102,241,.6);
+
+}
+
+/* =========================
+   FINAL CTA / TROPHY
+   ========================= */
+
+.trophy{
+    position:relative;
+    margin:35px 0 25px;
+    padding:32px 25px;
+    text-align:center;
+    border-radius:26px;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 50% 0%,
+        rgba(250,204,21,.18),
+        transparent 55%),
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.95),
+            rgba(15,23,42,.95)
+        );
+
+    border:1px solid rgba(250,204,21,.3);
+
+    box-shadow:
+        0 0 35px rgba(250,204,21,.12),
+        inset 0 0 30px rgba(250,204,21,.04);
+
+    transition:.4s;
+}
+
+.trophy:hover{
+    transform:translateY(-5px);
+    border-color:rgba(250,204,21,.7);
+
+    box-shadow:
+        0 0 45px rgba(250,204,21,.25),
+        inset 0 0 35px rgba(250,204,21,.08);
+}
+
+.trophy:before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    left:50%;
+    top:-110px;
+    transform:translateX(-50%);
+
+    background:#facc15;
+    opacity:.08;
+    filter:blur(45px);
+}
+
+.trophy span{
+    position:relative;
+    display:block;
+    font-size:68px;
+
+    filter:
+        drop-shadow(0 0 15px rgba(250,204,21,.7));
+
+    animation:trophyFloat 3s ease-in-out infinite;
+}
+
+@keyframes trophyFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.trophy h2{
+    position:relative;
+    margin:12px 0 8px;
+
+    color:#fde68a;
+
+    text-shadow:
+        0 0 12px rgba(250,204,21,.4);
+}
+
+.trophy p{
+    position:relative;
+    margin:0;
+
+    color:#cbd5e1;
+    font-size:16px;
+}
+
+
+/* =========================
+   FINAL JOIN BUTTON
+   ========================= */
+
+.join{
+    position:relative;
+
+    width:290px;
+    margin:30px auto;
+
+    padding:17px 25px;
+
+    text-align:center;
+
+    border-radius:50px;
+
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.5px;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            110deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed,
+            #2563eb
+        );
+
+    background-size:300% 100%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 25px rgba(37,99,235,.45),
+        inset 0 1px 0 rgba(255,255,255,.2);
+
+    animation:joinGradient 6s ease infinite;
+
+    transition:
+        transform .3s,
+        box-shadow .3s;
+}
+
+@keyframes joinGradient{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.join:before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #818cf8,
+            #a855f7,
+            #38bdf8
+        );
+
+    background-size:300%;
+
+    opacity:0;
+    z-index:-1;
+
+    filter:blur(12px);
+
+    transition:.3s;
+
+    animation:joinGlow 5s linear infinite;
+}
+
+@keyframes joinGlow{
+    50%{
+        background-position:100%;
+    }
+}
+
+.join:hover{
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 0 45px rgba(56,189,248,.6),
+        0 0 80px rgba(124,58,237,.25);
+}
+
+.join:hover:before{
+    opacity:1;
+}
+
+.join:active{
+    transform:scale(.97);
+}
+
+
+/* =========================
+   FINAL MESSAGE
+   ========================= */
+
+.final-message{
+    text-align:center;
+    margin:30px 0 10px;
+}
+
+.final-message h2{
+    margin-bottom:8px;
+
+    font-size:24px;
+
+    color:#e0f2fe;
+}
+
+.final-message p{
+    margin:0;
+
+    color:#94a3b8;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+    margin-top:30px;
+    padding-top:22px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    border-top:
+        1px solid rgba(148,163,184,.12);
+}
+
+.footer strong{
+    color:#94a3b8;
+}
+
+.footer a{
+    color:#38bdf8;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:600px){
+
+    .trophy{
+        padding:28px 18px;
+    }
+
+    .trophy span{
+        font-size:58px;
+    }
+
+    .join{
+        width:100%;
+        max-width:290px;
+    }
+
+    .final-message h2{
+        font-size:20px;
+    }
+
+}
+
+/* =========================
+   SMOOTH 3D MOUSE EFFECT
+   ========================= */
+
+const card = document.querySelector(".tc195cl");
+
+let isInside = false;
+
+document.addEventListener("mouseenter", function () {
+    isInside = true;
+});
+
+
+document.addEventListener("mousemove", function (e) {
+
+    if (!isInside) return;
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const rotateY = (e.clientX - centerX) / 120;
+    const rotateX = (centerY - e.clientY) / 120;
+
+    card.style.transform =
+        "perspective(1400px) " +
+        "rotateX(" + rotateX + "deg) " +
+        "rotateY(" + rotateY + "deg) " +
+        "scale(0.995)";
+
+});
+
+
+document.addEventListener("mouseleave", function () {
+
+    isInside = false;
+
+    card.style.transform =
+        "perspective(1400px) " +
+        "rotateX(0deg) " +
+        "rotateY(0deg) " +
+        "scale(1)";
+
+});
+
+
+/* =========================
+   REGISTER BUTTON
+   ========================= */
+
+const registerButton =
+    document.querySelector(".join");
+
+registerButton.addEventListener("click", function () {
+
+    window.open(
+        "https://www.chess.com/member/Stellar_Endgame",
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+});
+
+</script>
+
+
+</body>
+</html>
+```
+
+And add this CSS **before your existing `</style>`**:
+
+```css
+/* =========================
+   FINAL SECTION
+   ========================= */
+
+.trophy{
+    position:relative;
+    margin:35px 0 25px;
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:26px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(250,204,21,.18),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #1e293b,
+            #0f172a
+        );
+
+    border:1px solid rgba(250,204,21,.35);
+
+    box-shadow:
+        0 0 35px rgba(250,204,21,.12),
+        inset 0 0 30px rgba(250,204,21,.04);
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.trophy:hover{
+    transform:translateY(-5px);
+
+    border-color:#facc15;
+
+    box-shadow:
+        0 0 45px rgba(250,204,21,.3),
+        inset 0 0 35px rgba(250,204,21,.08);
+}
+
+.trophy-icon{
+    font-size:70px;
+
+    filter:
+        drop-shadow(0 0 18px rgba(250,204,21,.7));
+
+    animation:trophyFloat 3s ease-in-out infinite;
+}
+
+@keyframes trophyFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+.trophy h2{
+    margin:12px 0 8px;
+
+    color:#fde68a;
+
+    text-shadow:
+        0 0 12px rgba(250,204,21,.5);
+}
+
+.trophy p{
+    margin:0;
+
+    color:#cbd5e1;
+}
+
+
+/* REGISTER BUTTON */
+
+.join{
+    display:block;
+
+    width:290px;
+
+    margin:30px auto;
+
+    padding:17px 25px;
+
+    text-align:center;
+
+    border-radius:50px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed,
+            #2563eb
+        );
+
+    background-size:300% 100%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 25px rgba(37,99,235,.45);
+
+    animation:buttonGradient 6s ease infinite;
+
+    transition:.3s;
+}
+
+@keyframes buttonGradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+.join:hover{
+
+    color:white;
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 0 45px rgba(56,189,248,.65);
+
+}
+
+
+/* FINAL MESSAGE */
+
+.final-message{
+    text-align:center;
+
+    margin:35px 0 25px;
+}
+
+.final-message h2{
+    color:#e0f2fe;
+
+    margin:18px 0 8px;
+
+    font-size:24px;
+}
+
+.final-message p{
+    color:#94a3b8;
+
+    margin:0;
+}
+
+.final-line{
+    width:70%;
+
+    max-width:500px;
+
+    height:1px;
+
+    margin:auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #38bdf8,
+            #8b5cf6,
+            #facc15,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(56,189,248,.4);
+}
+
+
+/* OFFICIAL TEAM */
+
+.official-team{
+
+    margin:25px 0 10px;
+
+    padding:24px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(148,163,184,.15);
+
+    transition:.4s;
+}
+
+.official-team:hover{
+
+    border-color:
+        rgba(56,189,248,.45);
+
+    box-shadow:
+        0 0 25px rgba(56,189,248,.12);
+}
+
+.official-title{
+
+    color:#7dd3fc;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+}
+
+.official-team p{
+
+    margin:8px 0 18px;
+
+    color:#94a3b8;
+}
+
+.team-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.team-links a{
+
+    display:inline-block;
+
+    padding:10px 16px;
+
+    border-radius:30px;
+
+    background:
+        rgba(56,189,248,.08);
+
+    border:
+        1px solid rgba(56,189,248,.2);
+
+    color:#38bdf8;
+
+    transition:.3s;
+}
+
+.team-links a:hover{
+
+    color:#facc15;
+
+    border-color:#facc15;
+
+    background:
+        rgba(250,204,21,.08);
+
+    box-shadow:
+        0 0 18px rgba(250,204,21,.25);
+
+    transform:translateY(-3px);
+}
+
+
+/* FOOTER */
+
+.footer{
+
+    margin-top:25px;
+
+    padding-top:20px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    border-top:
+        1px solid rgba(148,163,184,.12);
+}
+
+.footer span{
+
+    color:#475569;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .join{
+        width:100%;
+        max-width:290px;
+    }
+
+    .team-links{
+        flex-direction:column;
+    }
+
+    .team-links a{
+        width:100%;
+    }
+
+}
+
 </style>
 
 </head>
@@ -825,569 +1879,296 @@ and maintain good sportsmanship.
 </div>
 
 
-/* =====================================
-   CHAMPION CARD
-   ===================================== */
 
-.trophy{
-    position:relative;
-
-    margin:35px 0 28px;
-    padding:32px 24px;
-
-    text-align:center;
-
-    border-radius:26px;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(250,204,21,.18),
-            transparent 60%
-        ),
-        linear-gradient(
-            145deg,
-            #1e293b,
-            #0f172a
-        );
-
-    border:1px solid rgba(250,204,21,.3);
-
-    box-shadow:
-        0 0 35px rgba(250,204,21,.12);
-
-    transition:.4s;
-}
-
-.trophy:hover{
-    transform:translateY(-5px);
-
-    border-color:#facc15;
-
-    box-shadow:
-        0 0 45px rgba(250,204,21,.28);
-}
-
-.trophy-icon{
-    font-size:68px;
-
-    filter:
-        drop-shadow(
-            0 0 18px
-            rgba(250,204,21,.7)
-        );
-
-    animation:
-        trophyFloat 3s ease-in-out infinite;
-}
-
-@keyframes trophyFloat{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
-}
-
-.trophy h2{
-    margin:12px 0 8px;
-
-    color:#fde68a;
-
-    text-shadow:
-        0 0 12px
-        rgba(250,204,21,.45);
-}
-
-.trophy p{
-    margin:0;
-
-    color:#cbd5e1;
-}
-
-
-/* =====================================
-   REGISTER DROPDOWN
-   ===================================== */
-
-.register-dropdown{
-    width:100%;
-    max-width:620px;
-
-    margin:30px auto;
-
-    position:relative;
-}
-
-
-/* Main button */
-
-.register-dropdown summary{
-
-    list-style:none;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    padding:18px 24px;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    user-select:none;
-
-    color:white;
-
-    font-size:18px;
-
-    font-weight:800;
-
-    letter-spacing:.5px;
-
-    background:
-        linear-gradient(
-            110deg,
-            #2563eb,
-            #4f46e5,
-            #7c3aed,
-            #2563eb
-        );
-
-    background-size:300% 100%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.2);
-
-    box-shadow:
-        0 0 25px
-        rgba(37,99,235,.4);
-
-    transition:.35s;
-}
-
-
-/* Remove default arrow */
-
-.register-dropdown summary::-webkit-details-marker{
-    display:none;
-}
-
-
-/* Hover */
-
-.register-dropdown summary:hover{
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 0 40px
-        rgba(56,189,248,.5);
-}
-
-
-/* Arrow */
-
-.arrow{
-
-    font-size:25px;
-
-    transition:.35s;
-}
-
-
-/* Rotate arrow when open */
-
-.register-dropdown[open] .arrow{
-
-    transform:
-        rotate(180deg);
-
-}
-
-
-/* Dropdown panel */
-
-.register-content{
-
-    margin-top:12px;
-
-    padding:24px;
-
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #111827,
-            #1e293b
-        );
-
-    border:
-        1px solid
-        rgba(56,189,248,.25);
-
-    box-shadow:
-        0 15px 45px
-        rgba(0,0,0,.35),
-        0 0 25px
-        rgba(56,189,248,.1);
-
-    animation:
-        dropdownOpen .3s ease;
-}
-
-
-@keyframes dropdownOpen{
-
-    from{
-        opacity:0;
-        transform:translateY(-8px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-
-.register-title{
-
-    margin:0;
-
-    text-align:center;
-
-    color:#e0f2fe;
-
-    font-size:20px;
-
-    font-weight:700;
-}
-
-
-.register-subtitle{
-
-    margin:7px 0 20px;
-
-    text-align:center;
-
-    color:#94a3b8;
-
-}
-
-
-/* Coordinator cards */
-
-.coordinators{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
-}
-
-
-.coordinator{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:15px 18px;
-
-    border-radius:16px;
-
-    text-decoration:none;
-
-    background:
-        rgba(255,255,255,.045);
-
-    border:
-        1px solid
-        rgba(148,163,184,.15);
-
-    transition:.3s;
-
-}
-
-
-.coordinator:hover{
-
-    transform:
-        translateX(6px);
-
-    border-color:
-        #38bdf8;
-
-    background:
-        rgba(56,189,248,.08);
-
-    box-shadow:
-        0 0 20px
-        rgba(56,189,248,.15);
-
-}
-
-
-/* Chess icon */
-
-.coordinator-icon{
-
-    width:42px;
-    height:42px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1d4ed8,
-            #7c3aed
-        );
-
-    font-size:21px;
-
-    box-shadow:
-        0 0 15px
-        rgba(37,99,235,.35);
-
-}
-
-
-/* Username */
-
-.coordinator-info{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:3px;
-
-}
-
-
-.coordinator-info strong{
-
-    color:#38bdf8;
-
-    font-size:16px;
-
-}
-
-
-.coordinator-info small{
-
-    color:#64748b;
-
-    font-size:12px;
-
-}
-
-
-.coordinator:hover
-.coordinator-info strong{
-
-    color:#facc15;
-
-    text-shadow:
-        0 0 10px
-        rgba(250,204,21,.5);
-
-}
-
-
-/* Bottom note */
-
-.register-note{
-
-    margin-top:18px;
-
-    padding:12px;
-
-    text-align:center;
-
-    border-radius:12px;
-
-    color:#94a3b8;
-
-    font-size:13px;
-
-    background:
-        rgba(255,255,255,.035);
-
-}
-
-
-/* =====================================
-   FINAL MESSAGE
-   ===================================== */
-
-.final-message{
-
-    text-align:center;
-
-    margin:38px 0 28px;
-
-}
-
-
-.final-message h2{
-
-    margin:18px 0 8px;
-
-    color:#e0f2fe;
-
-    font-size:24px;
-
-}
-
-
-.final-message p{
-
-    margin:0;
-
-    color:#94a3b8;
-
-}
-
-
-.final-line{
-
-    width:70%;
-
-    max-width:500px;
-
-    height:1px;
-
-    margin:auto;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #38bdf8,
-            #8b5cf6,
-            #facc15,
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px
-        rgba(56,189,248,.35);
-
-}
-
-
-/* =====================================
-   FOOTER
-   ===================================== */
-
-.official-footer{
-
-    margin-top:25px;
-
-    padding-top:20px;
-
-    text-align:center;
-
-    border-top:
-        1px solid
-        rgba(148,163,184,.12);
-
-}
-
-
-.official-footer strong{
-
-    display:block;
-
-    color:#94a3b8;
-
-    font-size:13px;
-
-    letter-spacing:1px;
-
-}
-
-
-.official-footer span{
-
-    display:block;
-
-    margin-top:6px;
-
-    color:#475569;
-
-    font-size:12px;
-
-}
-
-
-/* =====================================
-   MOBILE
-   ===================================== */
-
-@media(max-width:600px){
-
-    .register-dropdown{
-
-        width:100%;
-
-    }
-
-    .register-dropdown summary{
-
-        font-size:16px;
-
-        padding:16px 20px;
-
-    }
-
-    .register-content{
-
-        padding:18px;
-
-    }
-
-    .trophy-icon{
-
-        font-size:58px;
-
-    }
-
-    .final-message h2{
-
-        font-size:20px;
-
-    }
-
-}
 
 </script>
 
+
+</body>
+
+</html>
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="piece" style="top:15%;left:5%">♟</div>
+<div class="piece" style="top:65%;right:5%">♜</div>
+<div class="piece" style="bottom:10%;left:45%">♞</div>
+
+
+
+<div class="tc195cl">
+
+
+<div class="badge">
+🏆 SEASON 1 OFFICIAL LEAGUE
+</div>
+
+
+
+<h1 class="title">
+🌍 The Club Of 195 Countries League (TC195CL)
+</h1>
+
+
+
+<p class="subtitle">
+
+♟️ Official League of The Club Of 195 Countries
+
+<br>
+
+500+ Members • 11 Titled Players • 100% Activity
+
+</p>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+<h2>500+</h2>
+<p>Members</p>
+</div>
+
+
+<div class="stat">
+<h2>11</h2>
+<p>Titled Players</p>
+</div>
+
+
+<div class="stat">
+<h2>195</h2>
+<p>Countries Goal</p>
+</div>
+
+
+<div class="stat">
+<h2>100%</h2>
+<p>Activity</p>
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="box">
+
+<h2>🏛 About The League</h2>
+
+<p>
+
+TC195CL brings chess clubs together through friendly,
+competitive Multi-Club Arenas with monthly standings and champions.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="box">
+
+<h2>🏆 League Format</h2>
+
+<ul>
+
+<li>⚡ 3+2 Blitz (48hrs MCA)</li>
+
+<li>📅 Every Saturday - 13:00 UTC (6:30 PM IST)</li>
+
+<li>🏆 Monthly seasons</li>
+
+<li>📊 Results count toward standings</li>
+
+<li>🥇 Top clubs and players receive trophies</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+<div class="box">
+
+<h2>📝 Registration</h2>
+
+
+<ol>
+
+
+<li>
+
+Message
+
+<a href="https://www.chess.com/member/Stellar_Endgame" target="_blank">
+
+@Stellar_Endgame
+
+</a>
+
+</li>
+
+
+
+<li>
+
+Invite
+
+<a href="https://www.chess.com/club/the-club-of-195-countries" target="_blank">
+
+@The-Club-Of-195-Countries
+
+</a>
+
+</li>
+
+
+
+<li>
+
+Promote the account to Coordinator
+
+</li>
+
+
+</ol>
+
+
+
+<div class="highlight">
+
+✅ Automatic League Tournament Invitations
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="box">
+
+<h2>🤝 Fair Play</h2>
+
+
+<p>
+
+Respect opponents, follow Chess.com Fair Play Rules,
+and maintain good sportsmanship.
+
+</p>
+
+
+</div>
+<!-- FINAL CHAMPION SECTION -->
+
+<div class="trophy">
+
+    <div class="trophy-icon">🏆</div>
+
+    <h2>Become The Next TC195CL Champion</h2>
+
+    <p>
+        Compete • Represent • Conquer
+    </p>
+
+</div>
+
+
+<!-- REGISTER BUTTON -->
+
+<a
+    class="join"
+    href="https://www.chess.com/member/Stellar_Endgame"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    🚀 REGISTER YOUR CLUB
+</a>
+
+
+<!-- FINAL MESSAGE -->
+
+<div class="final-message">
+
+    <div class="final-line"></div>
+
+    <h2>🌟 May The Best Club Win! ♟️</h2>
+
+    <p>
+        See you on the league board.
+    </p>
+
+    <div class="final-line"></div>
+
+</div>
+
+
+<!-- OFFICIAL TEAM -->
+
+<div class="official-team">
+
+    <div class="official-title">
+        🏛️ TC195CL OFFICIAL TEAM
+    </div>
+
+    <p>
+        The Club Of 195 Countries Team
+    </p>
+
+    <div class="team-links">
+
+        <a
+            href="https://www.chess.com/member/Stellar_Endgame"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ♟️ @Stellar_Endgame
+        </a>
+
+        <a
+            href="https://www.chess.com/member/iamplayerofchess"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ♟️ @iamplayerofchess
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<p class="footer">
+
+    🌍 The Club Of 195 Countries League
+
+    <br>
+
+    <span>TC195CL • Official League</span>
+
+</p>
+
+</div>
 
 </body>
 
